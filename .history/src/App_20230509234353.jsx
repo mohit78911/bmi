@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ".//App.css";
-import DeveloperName from "./assets/DeveloperName";
 import Image from "./assets/Image";
 import InputBox from "./assets/InputBox";
 import Title from "./assets/Title";
@@ -50,7 +49,7 @@ export default function App(props) {
           bmi={bmi}
           massege={massege}
         />
-        <DeveloperName/>
+        
       </div>
     </>
   );

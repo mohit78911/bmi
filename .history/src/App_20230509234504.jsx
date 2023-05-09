@@ -50,7 +50,7 @@ export default function App(props) {
           bmi={bmi}
           massege={massege}
         />
-        <DeveloperName/>
+        <DeveloperName
       </div>
     </>
   );
