@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import ".//App.css";
-import { Button, TextField } from "@mui/material";
 import Image from "./assets/Image";
+import InputBox from "./assets/InputBox";
+import Title from "./assets/Title";
 
-export default function App() {
+export default function App(props) {
   const [weight, setWeight] = useState();
   const [height, setHeight] = useState();
   const [bmi, setBmi] = useState("");
@@ -30,38 +31,24 @@ export default function App() {
   let reload = () => {
     window.location.reload();
   };
+
   return (
     <>
       <div>
         <div>
-          <Image/>
-          <h2>- BMI Calculator -</h2>
+          <Image />
+          <Title title="- BMI Calculator -"/>
         </div>
-        <br/>
-        <form onSubmit={getBmi}>
-          <TextField
-            label="Enter your Weight"
-            value={weight}
-            onChange={(e) => setWeight(e.target.value)}
-          />
-          <br />
-          <br />
-          <TextField
-            label="Enter your Height"
-            value={height}
-            onChange={(e) => setHeight(e.target.value)}
-          />
-          <br />
-          <br />
-          <button className="btn btn-warning" onClick={reload}>Reload</button>&nbsp;&nbsp;
-          <button className="btn btn-danger" type="submit" onClick={() => getBmi()}>Get-BMI</button>
-          <br/><br/>
-          
-          <h3><span style={{color:"black"}}>BMI is : </span>{bmi}</h3>
-          <h6>
-            <u>{massege}</u>
-          </h6>
-        </form>
+        <InputBox
+          getbmi={getBmi}
+          weight={weight}
+          setweight={setWeight}
+          height={height}
+          setheight={setHeight}
+          reload={reload}
+          bmi={bmi}
+          massege={massege}
+        />
       </div>
     </>
   );
